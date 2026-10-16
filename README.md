@@ -11,7 +11,6 @@
 > - 🌐 **[Launch the Free Web-Based Landed Cost & Margin Bridge Simulator](./index.html)** — Test PO-to-shipment landed cost variance, FX impact decomposition, and retailer deduction classifications instantly in your browser (Free HTML Edition).
 > - 📥 **[Download the Full Landed Cost & Retailer Deduction Excel Workbook (.xlsx)](https://theseusworkshop.com/l/nakbxr)** — Get the 5-sheet dynamic array Microsoft Excel template for offline shipment reconciliation, remittance dispute tracking, and recurring SKU profitability audits *(Paid Commercial Edition — backed by a 30-day money-back guarantee)*.
 >
-> *Deployment Note: These relative paths assume `index.html` and `PCRA_Master_Model.xlsx` reside in the repository root. Update with live web demo and commercial checkout URLs prior to publishing.*
 
 Designed specifically for **offshore sourcing and import distribution workflows**—spanning overseas factory POs, international ocean freight, Australian customs clearance (DAFF/ABF), local port drayage, and wholesale distribution into major retail chains (**Woolworths, Coles, ALDI, Kmart, and Big W**). Rather than replacing your ERP, general ledger, or customs broker, this Product Costing & Reconciliation Analyzer (PCRA) acts as an auditable decision-support layer answering one critical commercial question:
 
