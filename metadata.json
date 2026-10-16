@@ -1,0 +1,6 @@
+{
+  "name": "Product Costing & Reconciliation Analyzer (PCRA)",
+  "description": "SaaS Product Costing & Reconciliation Analyzer with dynamic calculation engine, multi-dimensional variance attribution, and retail deduction recovery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
