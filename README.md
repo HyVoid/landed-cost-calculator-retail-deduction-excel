@@ -4,6 +4,8 @@
 ![Platform: Browser + Excel](https://img.shields.io/badge/Platform-Browser%20%2B%20Excel-2251FF)
 ![Tool type: Cost Accounting & Margin Recovery](https://img.shields.io/badge/Tool-Landed%20Cost%20%26%20Deduction%20Audit-051C2C)
 
+<img width="1920" height="790" alt="image" src="https://github.com/user-attachments/assets/2b016445-ce04-4943-8a86-f1371b49f1a3" />
+
 **An import landed cost calculator, shipment cost variance reconciliation model, and retailer chargeback/deduction recovery Excel template. Built for consumer goods (FMCG) importers, supply chain analysts, and commercial finance controllers to reconcile PO estimates against actual ocean freight, customs duty, FX, and port drayage—while auditing retail remittance deductions (including Woolworths, Coles, ALDI, Kmart, and Big W) to expose true SKU-level net margin.**
 
 > **Access the Landed Cost & Retail Margin Bridge Tools (No Signup or Installation)**
