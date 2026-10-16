@@ -1,74 +1,140 @@
-# Reconcile Landed Costs and Reveal Real Product Margin with PCRA
+# Landed Cost Calculator, Shipment Variance & Retailer Deduction Recovery Excel Template (FMCG & Import Margin Bridge)
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 ![Platform: Browser + Excel](https://img.shields.io/badge/Platform-Browser%20%2B%20Excel-2251FF)
-![Tool type: Decision Support](https://img.shields.io/badge/Tool-Decision%20Support-051C2C)
+![Tool type: Cost Accounting & Margin Recovery](https://img.shields.io/badge/Tool-Landed%20Cost%20%26%20Deduction%20Audit-051C2C)
 
-**PCRA (Product Costing & Reconciliation Analyzer) helps importers and consumer-goods teams reconcile expected vs. actual landed costs, explain margin erosion, and identify retailer deductions worth investigating. The browser version is free. The Excel version is paid with a 30-day money-back guarantee.**
+**An import landed cost calculator, shipment cost variance reconciliation model, and retailer chargeback/deduction recovery Excel template. Built for consumer goods (FMCG) importers, supply chain analysts, and commercial finance controllers to reconcile PO estimates against actual ocean freight, customs duty, FX, and port drayage—while auditing retail remittance deductions (including Woolworths, Coles, ALDI, Kmart, and Big W) to expose true SKU-level net margin.**
 
-> **No signup. No installation.**
+> **Access the Landed Cost & Retail Margin Bridge Tools (No Signup or Installation)**
 >
-> **Browser version: Free. Excel version: Paid with a 30-day money-back guarantee.**
+> - 🌐 **[Launch the Free Web-Based Landed Cost & Margin Bridge Simulator](./index.html)** — Test PO-to-shipment landed cost variance, FX impact decomposition, and retailer deduction classifications instantly in your browser (Free HTML Edition).
+> - 📥 **[Download the Full Landed Cost & Retailer Deduction Excel Workbook (.xlsx)](./PCRA_Master_Model.xlsx)** — Get the 5-sheet dynamic array Microsoft Excel template for offline shipment reconciliation, remittance dispute tracking, and recurring SKU profitability audits *(Paid Commercial Edition — backed by a 30-day money-back guarantee)*.
 >
-> - [🌐 Open the browser version](./index.html) — free HTML edition.
-> - [📥 Open the Excel workbook](./PCRA_Master_Model.xlsx) — Excel edition. Commercial purchase terms apply.
->
-> *Repository note: these relative links assume `index.html` and `PCRA_Master_Model.xlsx` are published alongside this README. Confirm the files and replace the links with the live demo and purchase URLs before publishing if your repository uses different paths.*
+> *Deployment Note: These relative paths assume `index.html` and `PCRA_Master_Model.xlsx` reside in the repository root. Update with live web demo and commercial checkout URLs prior to publishing.*
 
-PCRA is designed for a specific operating model: offshore purchasing, international ocean freight, Australian import clearance, domestic logistics, and distribution through major Australian retailers such as Woolworths, Coles, ALDI, Kmart, and Big W. It is a reusable cost-review and decision-support framework—not an ERP, accounting platform, customs filing system, or generic dashboard.
+Designed specifically for **offshore sourcing and import distribution workflows**—spanning overseas factory POs, international ocean freight, Australian customs clearance (DAFF/ABF), local port drayage, and wholesale distribution into major retail chains (**Woolworths, Coles, ALDI, Kmart, and Big W**). Rather than replacing your ERP, general ledger, or customs broker, this Product Costing & Reconciliation Analyzer (PCRA) acts as an auditable decision-support layer answering one critical commercial question:
 
-The central question is straightforward: **after purchase, freight, duty, local charges, foreign exchange, and retailer deductions are accounted for, what margin is actually left—and which differences need action?**
+**After FOB purchase price, ocean freight, customs duty, local port handling, foreign exchange (FX) swings, and retailer remittance deductions are fully reconciled, what net product margin is actually left—and which exceptions require immediate dispute or repricing action?**
 
-## What It Helps You Track
+---
 
-- **Expected vs. recalculated landed cost by PO and SKU**, making understated cost baselines easier to identify before they distort pricing decisions.
-- **Actual freight, duty, port, and drayage cost per unit**, based on shipment expenses and received quantities.
-- **Cost variance by likely driver**, so a total overrun can be investigated as freight, duty, FX, port charges, or other mapped components.
-- **Book gross margin vs. realized landed-cost margin vs. net effective margin**, showing how operational leakage changes the commercial picture.
-- **Retailer deductions by normalized category and recovery status**, separating known contractual rebates from claims that may deserve review.
-- **High-priority exceptions**, including large cost variances, unknown deduction codes, and deductions flagged for potential recovery.
+## Core Import Costing Metrics & Retail Margin Leakage Problems Solved
 
-## Quick Start Workflow
+Instead of managing disconnected freight forwarder invoices, customs entry sheets, and retailer remittance PDFs, this framework unifies cost accounting and commercial deduction auditing. Here is how the model maps **import and retail distribution pain points** to automated **margin bridge metrics**:
 
-1. **Set the control parameters.** On `01_Rules_Mapping`, confirm the reporting period, base currency, budget and actual exchange rates, cost-variance thresholds, target gross margin, and high-value deduction threshold. Review the duty and retailer-deduction mappings for the current business.
-2. **Bring in existing source data.** Export purchase-order estimates, freight and customs invoices, receipt quantities, retailer sales, and deduction statements from existing systems or spreadsheets. Paste values into the corresponding input blocks in `02_Source_Data`. Keep source records traceable to their original documents.
-3. **Review the calculated results.** Check `03_Cost_Engine` for the recalculated landed-cost baseline and `04_Reconciliation` for actual costs, variance drivers, deduction classifications, and recovery flags. Investigate validation warnings and any non-zero reconciliation residual before relying on the summary.
-4. **Turn exceptions into actions.** Use `05_Management_Summary` to review margin erosion, the highest-impact SKU variances, and the potential recovery pool. Assign an owner, gather supporting documents, and update the dispute status. Refresh the source data on a weekly, monthly, or shipment-close cadence that fits the operation.
+| Import & Retail Margin Pain Point | Automated Reconciliation & Audit Mechanism | Key Cost Accounting & Margin KPIs Tracked |
+| :--- | :--- | :--- |
+| **Understated Standard / Estimated Landed Costs** | Recalculates true baseline landed cost per PO and SKU from raw component rules, exposing omitted cost elements before they distort wholesale pricing. | Expected vs. recalculated standard landed cost ($/unit), baseline understatement flag |
+| **Unallocated Ocean Freight, Duty & Port Charges** | Allocates actual container-level ocean freight, customs tariff duties, port terminal handling (THC), and local drayage across verified received unit quantities. | Realized landed cost per unit, freight/duty/port/drayage cost split per SKU |
+| **Blended FX vs. Logistics Cost Overruns** | Decomposes total shipment cost variance by isolating foreign exchange (budget vs. actual spot/hedged rate) from operational freight and duty rate spikes. | Total landed cost variance ($ / %), FX variance driver, freight & duty overrun attribution |
+| **Illusory "Book Gross Margin" Reporting** | Builds a multi-stage SKU margin bridge connecting accounting book margin to realized shipment costs and post-sale retail deductions. | Book Gross Margin (%) $\rightarrow$ Realized Landed Margin (%) $\rightarrow$ Net Effective Margin (%) |
+| **Cryptic Retailer Remittance & Chargeback Codes** | Normalizes fragmented deduction codes across major grocers and department stores into standardized buckets (contractual rebates vs. disputable fines). | Normalized deduction category (Trading Terms, Co-op, DIFOT/OTIF Fines, Ullage/Damage), unmapped code alerts |
+| **Missed Retailer Claim & Chargeback Recoveries** | Flags high-value disputable deductions against configurable dollar thresholds, assigning dispute owners and required POD/delivery evidence checklists. | Recoverable deduction pool ($), dispute recovery status, high-priority SKU exception queue |
 
-Set a few key parameters. Drop in existing data. Review the analysis. Refresh when the next batch closes.
+---
 
-## Why I Built This
+## Step-by-Step Tutorial: How to Reconcile Import Landed Costs & Audit Retailer Deductions
 
-In an import-and-distribution business, the purchase price is only one part of product cost. A quote may use a budget exchange rate and estimated freight; the final shipment may arrive with different freight charges, customs duty, port fees, and local delivery expenses. Weeks later, retailer remittance statements may introduce rebates, compliance fines, damage claims, or other deductions. These records often live in separate spreadsheets and arrive at different times.
+The workbook follows a structured **4-stage shipment-close and monthly financial reconciliation workflow**: configure your FX, duty, and retailer code mappings once, drop in raw ERP/remittance exports, inspect the variance bridge, and trigger claim recoveries.
 
-The analytical failure is treating each view as complete. A cost sheet can be internally consistent but omit a charge. A margin report can look healthy because it uses estimated landed cost. A retailer deduction can be posted as a loss without checking whether the underlying delivery evidence supports a dispute—or treated as recoverable without the evidence needed to challenge it.
+### Step 1: Configure FX Rates, Variance Thresholds & Retailer Deduction Mappings
+Open the `01_Rules_Mapping` sheet to establish your commercial governance parameters and lookup tables:
 
-PCRA packages a repeatable reasoning process into a lightweight workbook: recalculate the cost baseline, compare it with actual shipment costs, explain the variance, normalize deduction codes, and carry the result into a margin bridge. The point is not to automate judgment. It is to make the assumptions and exceptions visible before a team decides whether to reprice, investigate a supplier or freight invoice, correct a cost model, or challenge a retailer deduction.
+- **Financial & FX Controls:** Set the reporting period, base accounting currency (e.g., `AUD` / `USD`), budgeted exchange rate, actual realized exchange rate, and target gross margin floor.
+- **Exception Alert Thresholds:** Define acceptable landed-cost variance tolerances (%) and the dollar threshold for high-value retailer deduction alerts.
+- **Tariff & Retailer Code Normalization:** Review customs duty rates and map proprietary retailer deduction codes (across Woolworths, Coles, ALDI, Kmart, Big W) to standardized accounting categories and recovery eligibility rules.
 
-For example, a product may appear to earn a 35% book gross margin. If actual landed costs and retailer compliance deductions reduce its net effective margin to 24%, the decision is no longer simply “keep selling because the book margin is healthy.” The product needs a targeted review of cost assumptions, delivery performance, contract terms, and recovery evidence.
+### Step 2: Import PO Estimates, Customs Invoices & Retailer Remittance Statements
+Export raw transaction records from your ERP, inventory system, customs broker, or retailer supplier portals (e.g., SAP, NetSuite, MYOB, Cin7, Dear/Unleashed, vendor remittance CSVs) and paste them into the structured input blocks in `02_Source_Data`:
 
-## Common Import Cost and Margin Problems This Solves
+- **Purchasing & Receiving:** Purchase Order (PO) cost estimates and actual warehouse receipt quantities by SKU.
+- **Logistics & Customs Clearance:** Actual international freight invoices, customs duty assessments, port charges, and domestic drayage bills.
+- **Commercial Sales & Deductions:** Gross retailer sales invoices and line-item remittance deduction statements (retaining original document reference IDs for audit traceability).
 
-| Problem | Without PCRA | With PCRA |
-|---|---|---|
-| Estimated landed cost omits a component | A low baseline flows into pricing and margin reports unnoticed. | Recalculated cost is compared with the recorded baseline, with exceptions flagged for review. |
-| Freight and local charges arrive after the PO is priced | A total overrun is visible only after the margin has already been reported. | Shipment-level charges are allocated across received units and compared with the expected cost basis. |
-| FX movement is mixed with operational cost changes | Teams cannot tell whether a variance came from currency, freight, duty, or port handling. | Variance components provide a structured starting point for investigation, subject to the input fields available. |
-| Retailer deductions use inconsistent codes | Rebates, compliance fines, damage claims, and unknown codes are difficult to compare. | Retailer-plus-code mappings normalize the records and expose unmapped codes for classification. |
-| Potentially disputable fines are buried in deductions | Recoverable claims are missed, or staff spend time pursuing unsupported claims. | Recovery flags, value thresholds, owners, and evidence guidance create a prioritized review queue. |
-| Headline gross margin hides leakage | Management sees a single margin figure that does not reflect all operational deductions. | A margin bridge separates book margin, realized landed-cost margin, and net effective margin. |
+### Step 3: Audit the Landed Cost Engine & Variance Decomposition
+Navigate through the automated calculation sheets to verify shipment economics before finalizing management reports:
 
-## Who This Is For
+1. **Baseline Cost Verification (`03_Cost_Engine`):** Inspect the recalculated standard landed cost per SKU to catch missing duty or freight assumptions in your initial pricing sheet.
+2. **Variance & Deduction Reconciliation (`04_Reconciliation`):** Review actual per-unit landed costs, driver-by-driver variance attribution (FX vs. Freight vs. Duty vs. Port), normalized retailer deduction buckets, and automated recovery flags.
+3. **Zero-Residual Integrity Check:** Verify that all validation warnings are cleared and the reconciliation residual equals zero before relying on executive outputs.
 
-PCRA is intended for importers, consumer-goods operators, supply-chain analysts, cost accountants, finance controllers, and account managers who reconcile offshore purchasing with Australian retail distribution. It is especially useful when the source data already exists but the team needs a consistent way to join it, challenge the cost assumptions, and prioritize exceptions without implementing a new enterprise platform.
+### Step 4: Prioritize Chargeback Disputes & Operationalize in the Excel Workbook
+Open `05_Management_Summary` to turn financial variances into commercial actions:
+- Inspect the **Margin Bridge** for products suffering severe erosion (e.g., a SKU dropping from a `35% Book Gross Margin` down to a `24% Net Effective Margin`).
+- Review the **Dispute Recovery Queue**, assign an account manager or logistics owner, compile proof-of-delivery (POD) or buyer email evidence, and track claim status through resolution.
 
-It is **not** designed to replace an ERP, general ledger, customs broker, tax adviser, or retailer dispute process. It does not independently verify invoices, determine legal entitlement to recover a deduction, or submit a claim. Results depend on the quality of source records, mappings, and assumptions.
+> 🚢 **Ready to stop margin leakage across your import shipments and retail accounts?** 
+> After exploring the variance bridge in the **[Free Browser-Based Landed Cost & Margin Simulator](./index.html)**, get the **[Full PCRA Landed Cost & Deduction Recovery Excel Workbook (.xlsx)](./PCRA_Master_Model.xlsx)** to process your own shipment batches offline, customize retailer deduction mappings, and maintain a repeatable monthly margin audit *(requires Microsoft 365 or Excel 2021+ for dynamic array formulas; backed by a 30-day money-back guarantee)*.
 
-No spreadsheet expertise is needed to begin with the free browser version. The Excel version is paid with a 30-day money-back guarantee. The Excel edition is intended for Microsoft 365 or Excel 2021 and later because it relies on modern dynamic-array functions.
+---
 
-## About
+## Why I Built This Import Landed Cost & Retail Margin Bridge Framework
 
-I build lightweight operational tools for recurring decisions that have too many moving parts to hold in a person's head, but do not necessarily justify a new software platform. The guiding question is: **what information needs to be in one place to make the next decision confidently?** PCRA is one example: a reusable cost-reconciliation method that turns fragmented purchase, logistics, customs, sales, and deduction records into a reviewable set of business exceptions.
+In an offshore import and wholesale retail distribution business, the factory FOB purchase price is merely the starting line of product costing.
+
+A commercial quote is typically built months in advance using a budgeted foreign exchange rate and estimated container freight. When the physical shipment clears customs, the importer faces actual ocean freight surcharges, customs tariff duties, port terminal handling fees, and domestic drayage bills. Weeks after delivery to retail distribution centers, retailer remittance advices arrive—deducting promotional co-op rebates, DIFOT/OTIF late-delivery penalties, barcode/carton compliance fines, or shortage claims. Because these records arrive weeks apart across freight forwarders, customs brokers, warehouse teams, and accounts receivable, they rarely live in the same system.
+
+### The "35% Book Margin vs. 24% Net Effective Margin" Illusion
+The core analytical failure in wholesale distribution is treating each departmental spreadsheet as complete:
+- A **purchasing cost sheet** can be mathematically accurate while completely omitting local port drayage or customs entry fees.
+- A **sales gross margin report** looks healthy at **35% Book Margin** because it relies on outdated standard landed costs.
+- An **accounts receivable ledger** writes off retailer compliance deductions as routine cost-of-doing-business without checking whether warehouse PODs support a formal dispute—or conversely, wastes staff hours chasing contractual rebates that are non-recoverable.
+
+When actual shipment overruns and unrecovered retailer deductions are bridged together, that "healthy" **35% book gross margin SKU frequently collapses to a 24% net effective margin**. At 24%, the commercial action changes completely: the team must immediately reprice the SKU, renegotiate freight/supplier terms, fix warehouse DIFOT compliance, or file a deduction recovery claim.
+
+I built PCRA to package that end-to-end diagnostic workflow into an inspectable, repeatable workbook—making hidden cost assumptions and disputable retail deductions visible before margin erosion becomes permanent.
+
+---
+
+## Disconnected Import Spreadsheets vs. Integrated Landed Cost & Deduction Engine
+
+| Costing & Margin Audit Dimension | Disconnected ERP Exports & Ad-Hoc Cost Sheets | PCRA Landed Cost & Margin Bridge Workbook (This Tool) |
+| :--- | :--- | :--- |
+| **Standard Landed Cost Baselines** | Omitted port fees or duty miscalculations flow silently into wholesale price lists and margin reports. | Independently recalculates expected landed cost by PO and SKU, flagging understated baselines prior to pricing review. |
+| **Post-PO Freight & Customs Allocation** | Container freight, customs duty, and local drayage invoices arrive late and get booked to lump-sum overhead accounts. | Allocates actual shipment-level logistics and customs charges across received unit quantities down to the SKU level. |
+| **FX vs. Freight Variance Attribution** | Finance teams see a total cost overrun but cannot isolate currency depreciation from freight forwarder rate hikes. | Decomposes landed cost variance by specific driver (**FX movement, ocean freight, customs duty, port handling, drayage**). |
+| **Multi-Retailer Deduction Normalization** | Cryptic remittance codes across Woolworths, Coles, ALDI, Kmart, and Big W prevent cross-account loss analysis. | Normalizes retailer-specific deduction codes into structured buckets and highlights unmapped codes for immediate classification. |
+| **Retail Chargeback & Fine Recovery** | Disputable DIFOT fines and shortage claims sit buried inside promotional rebate deductions, leaving cash on the table. | Applies dollar thresholds, recovery eligibility flags, owner assignments, and evidence checklists to build an actionable dispute queue. |
+| **True SKU Profitability Visibility** | Leadership relies on a single headline Gross Margin % that masks supply chain overruns and retail compliance leakage. | Generates an end-to-end **SKU Margin Bridge** (`Book Gross Margin` $\rightarrow$ `Realized Landed Margin` $\rightarrow$ `Net Effective Margin`). |
+
+---
+
+## Who This Costing & Reconciliation Tool Is Built For: Roles & Workflows
+
+This dual-format (Free Browser Simulator + Commercial Excel Workbook) toolkit is built for finance, supply chain, and commercial retail teams operating in import-heavy consumer goods:
+
+- **Importers, Wholesalers & FMCG Brand Operators:** Gain complete visibility over offshore unit economics. Use the **import landed cost calculator** to verify true container arrival costs from Asia/overseas factories through Australian port clearance and domestic delivery.
+- **Cost Accountants, Financial Controllers & Commercial FP&A Teams:** Replace fragile month-end variance reconciliations with a standardized **PO-to-actual landed cost reconciliation template**. Separate FX gains/losses from freight variances and reconcile cost of goods sold (COGS) with full document traceability.
+- **National Account Managers (NAMs) & Retail Commercial Leads:** Stop flying blind into retailer range reviews. Use the **SKU margin bridge and deduction analyzer** to see exactly how trading terms, promotional rebates, and compliance penalties impact net profitability across **Woolworths, Coles, ALDI, Kmart, and Big W**.
+- **Accounts Receivable (AR) & Deduction Recovery Specialists:** Turn messy retailer remittance statements into a prioritized **chargeback dispute tracker**. Isolate high-value compliance fines and shortage claims from contractual rebates so your team only chases recoverable cash backed by delivery evidence.
+- **Supply Chain, Logistics & Procurement Analysts:** Audit freight forwarder invoices, customs broker tariff classifications, and port drayage charges per received unit to identify container utilization inefficiencies and supplier overcharges.
+
+---
+
+## Industry Use Cases & Long-Tail Import/Retail Scenarios
+
+Whether you import private-label homewares, fast-moving consumer goods (FMCG), apparel, or hardware into major retail chains, this model adapts to high-friction margin scenarios:
+
+### 1. Australian Supermarket & Department Store Deduction Auditing (Woolworths, Coles, ALDI, Kmart, Big W)
+Supplying major Australian national retailers involves navigating complex vendor trading terms, promotional funding, ulage allowances, and strict supply-chain compliance regimes (such as DIFOT / OTIF delivery windows and pallet/carton labeling rules). By mapping **Retailer + Deduction Code** combinations in `01_Rules_Mapping`, commercial teams can automatically separate agreed contractual rebates from disputable compliance penalties.
+
+### 2. Container-Level Ocean Freight, Customs Duty & FX Variance Decomposition
+When an overseas Purchase Order is priced at `0.68 AUD/USD` with an estimated `$3,500` container freight rate, but clears customs three months later at `0.64 AUD/USD` with peak-season congestion surcharges and port detention fees, headline product margins evaporate. The `04_Reconciliation` engine isolates how much of the per-unit cost spike was driven by **currency movement versus logistics inflation**, informing whether finance needs to adjust FX hedging or procurement needs to renegotiate forwarder rates.
+
+### 3. Wholesale Price-Increase Justification & Range Review Preparation
+Retail buyers rarely accept wholesale price increases based on vague claims of "rising supply chain costs." Use the **recalculated landed cost baseline and variance driver breakdown** to present verifiable, component-level cost evidence (duty, ocean freight, FX) during retail buyer negotiations, or identify chronically unprofitable SKUs that require delisting or re-engineering.
+
+---
+
+### Operational Scope & Governance Disclaimer
+*PCRA is an analytical decision-support framework and cost-reconciliation workbook—not a transactional ERP, statutory general ledger, licensed customs brokerage filing system, tax advisory service, or automated retailer dispute portal. It does not independently verify third-party freight invoices, establish legal entitlement to recover a retail deduction, or lodge claims with retail buyers. Output accuracy depends strictly on the completeness of user-supplied source records, code mappings, and parameter assumptions. The commercial Excel edition requires **Microsoft 365 or Excel 2021 and later** (supporting dynamic array formulas).*
+
+---
+
+## About the Creator
+
+I build lightweight, inspectable operational decision-support tools for recurring commercial workflows that have too many moving variables to track mentally, yet do not require deploying a costly enterprise software suite. The guiding engineering question is: **What exact cost, logistics, and commercial data points must be brought together in one place to make the next pricing or dispute decision confidently?**
 
 ## Technical Details
 
