@@ -9,7 +9,7 @@
 > **Access the Landed Cost & Retail Margin Bridge Tools (No Signup or Installation)**
 >
 > - 🌐 **[Launch the Free Web-Based Landed Cost & Margin Bridge Simulator](./index.html)** — Test PO-to-shipment landed cost variance, FX impact decomposition, and retailer deduction classifications instantly in your browser (Free HTML Edition).
-> - 📥 **[Download the Full Landed Cost & Retailer Deduction Excel Workbook (.xlsx)](./PCRA_Master_Model.xlsx)** — Get the 5-sheet dynamic array Microsoft Excel template for offline shipment reconciliation, remittance dispute tracking, and recurring SKU profitability audits *(Paid Commercial Edition — backed by a 30-day money-back guarantee)*.
+> - 📥 **[Download the Full Landed Cost & Retailer Deduction Excel Workbook (.xlsx)](https://theseusworkshop.com/l/nakbxr)** — Get the 5-sheet dynamic array Microsoft Excel template for offline shipment reconciliation, remittance dispute tracking, and recurring SKU profitability audits *(Paid Commercial Edition — backed by a 30-day money-back guarantee)*.
 >
 > *Deployment Note: These relative paths assume `index.html` and `PCRA_Master_Model.xlsx` reside in the repository root. Update with live web demo and commercial checkout URLs prior to publishing.*
 
@@ -65,7 +65,7 @@ Open `05_Management_Summary` to turn financial variances into commercial actions
 - Review the **Dispute Recovery Queue**, assign an account manager or logistics owner, compile proof-of-delivery (POD) or buyer email evidence, and track claim status through resolution.
 
 > 🚢 **Ready to stop margin leakage across your import shipments and retail accounts?** 
-> After exploring the variance bridge in the **[Free Browser-Based Landed Cost & Margin Simulator](./index.html)**, get the **[Full PCRA Landed Cost & Deduction Recovery Excel Workbook (.xlsx)](./PCRA_Master_Model.xlsx)** to process your own shipment batches offline, customize retailer deduction mappings, and maintain a repeatable monthly margin audit *(requires Microsoft 365 or Excel 2021+ for dynamic array formulas; backed by a 30-day money-back guarantee)*.
+> After exploring the variance bridge in the **[Free Browser-Based Landed Cost & Margin Simulator](./index.html)**, get the **[Full PCRA Landed Cost & Deduction Recovery Excel Workbook (.xlsx)](https://theseusworkshop.com/l/nakbxr)** to process your own shipment batches offline, customize retailer deduction mappings, and maintain a repeatable monthly margin audit *(requires Microsoft 365 or Excel 2021+ for dynamic array formulas; backed by a 30-day money-back guarantee)*.
 
 ---
 
