@@ -1,7 +1,3 @@
-<p align="center">
-  <strong>English</strong> · <a href="./README.zh-CN.md">简体中文</a>
-</p>
-
 # Reconcile Landed Costs and Reveal Real Product Margin with PCRA
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
