@@ -7,6 +7,7 @@ on:
       - master
   workflow_dispatch:
 
+# Grant write permissions to GITHUB_TOKEN to allow pushing to gh-pages branch
 permissions:
   contents: write
 
@@ -21,11 +22,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # Disabled npm Cache Setup: Removed the cache parameter to avoid
-          # "Dependencies lock file is not found in /home/runner/work/" errors
+          # Disabled npm Cache Setup: Removed the cache parameter to prevent
+          # "Dependencies lock file is not found in /home/runner/work/" error
 
       - name: Install dependencies
-        run: npm install
+        # Use --legacy-peer-deps to prevent npm ERESOLVE peer dependency lock failures in CI
+        run: npm install --legacy-peer-deps
 
       - name: Build production applet
         run: npm run build
@@ -36,4 +38,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
           force_orphan: true

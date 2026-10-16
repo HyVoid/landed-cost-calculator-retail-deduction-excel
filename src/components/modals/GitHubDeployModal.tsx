@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, GitBranch, Copy, Check, Info, ShieldAlert } from 'lucide-react';
+import { X, GitBranch, Copy, Check, Info, ShieldAlert, AlertTriangle, CheckCircle2 } from 'lucide-react';
 
 interface GitHubDeployModalProps {
   isOpen: boolean;
@@ -15,6 +15,7 @@ on:
       - master
   workflow_dispatch:
 
+# Grant write permissions to GITHUB_TOKEN to allow pushing to gh-pages branch
 permissions:
   contents: write
 
@@ -29,11 +30,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # Disabled npm Cache Setup: Removed the cache parameter to avoid
-          # "Dependencies lock file is not found in /home/runner/work/" errors
+          # Disabled npm Cache Setup: Removed the cache parameter to prevent
+          # "Dependencies lock file is not found in /home/runner/work/" error
 
       - name: Install dependencies
-        run: npm install
+        # Use --legacy-peer-deps to prevent npm ERESOLVE peer dependency lock failures in CI
+        run: npm install --legacy-peer-deps
 
       - name: Build production applet
         run: npm run build
@@ -44,6 +46,8 @@ jobs:
           github_token: \${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
           force_orphan: true
 `;
 
@@ -89,6 +93,25 @@ export const GitHubDeployModal: React.FC<GitHubDeployModalProps> = ({
 
         {/* Content */}
         <div className="p-6 space-y-4 overflow-y-auto text-xs">
+          {/* Troubleshooting Alert Banner */}
+          <div className="p-3.5 bg-[rgba(211,47,47,0.04)] border border-[rgba(211,47,47,0.2)] rounded-lg space-y-2">
+            <div className="flex items-center gap-1.5 font-bold text-[#D32F2F]">
+              <AlertTriangle className="w-4 h-4 shrink-0" />
+              <span>Fixing Deployment Failure (&ldquo;feat: initialize...&rdquo;)</span>
+            </div>
+            <p className="text-gray-700 leading-relaxed text-[11.5px]">
+              If your GitHub Actions build fails on this commit, it is almost always caused by one of two root causes:
+            </p>
+            <ul className="list-disc list-inside space-y-1 text-gray-700 text-[11.5px] ml-1">
+              <li>
+                <strong>Issue 1: npm dependency conflict (ERESOLVE):</strong> Fixed by adding <code>--legacy-peer-deps</code> in the updated workflow and aligning <code>esbuild</code>.
+              </li>
+              <li>
+                <strong>Issue 2: GitHub 403 Permission Denied:</strong> In GitHub repo &rarr; <strong>Settings &rarr; Actions &rarr; General &rarr; Workflow permissions</strong>, you MUST check <strong>&ldquo;Read and write permissions&rdquo;</strong> so the action can create the <code>gh-pages</code> branch.
+              </li>
+            </ul>
+          </div>
+
           {/* Key Compliance Badges */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="p-3 bg-[rgba(34,81,255,0.04)] border border-[rgba(34,81,255,0.2)] rounded-lg">
@@ -107,7 +130,7 @@ export const GitHubDeployModal: React.FC<GitHubDeployModalProps> = ({
                 <span>npm Cache Disabled</span>
               </div>
               <p className="text-gray-600 text-[11.5px]">
-                The workflow intentionally omits <code>cache: &apos;npm&apos;</code> in <code>setup-node</code>, completely preventing the common CI failure &ldquo;Dependencies lock file is not found in /home/runner/work/&rdquo;.
+                The workflow intentionally omits <code>cache: &apos;npm&apos;</code> in <code>setup-node</code>, completely preventing the CI failure &ldquo;Dependencies lock file is not found in /home/runner/work/&rdquo;.
               </p>
             </div>
           </div>
@@ -136,25 +159,26 @@ export const GitHubDeployModal: React.FC<GitHubDeployModalProps> = ({
               </button>
             </div>
 
-            <pre className="p-3.5 bg-[#051C2C] text-[#E8E8E6] font-mono text-[11px] leading-relaxed rounded-lg overflow-x-auto max-h-64 selection:bg-[#2251FF]">
+            <pre className="p-3.5 bg-[#051C2C] text-[#E8E8E6] font-mono text-[11px] leading-relaxed rounded-lg overflow-x-auto max-h-60 selection:bg-[#2251FF]">
               {GITHUB_WORKFLOW_YML}
             </pre>
           </div>
 
           {/* 3 Step Instructions */}
           <div className="bg-gray-50 p-3.5 rounded-lg border border-[#E8E8E6] space-y-2">
-            <h4 className="font-semibold text-[#051C2C] text-[12px]">
-              3-Step Activation Guide in GitHub:
+            <h4 className="font-semibold text-[#051C2C] text-[12px] flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-[#00C853]" />
+              <span>3-Step Activation Guide in GitHub:</span>
             </h4>
-            <ol className="list-decimal list-inside space-y-1 text-gray-600 text-[11.5px]">
+            <ol className="list-decimal list-inside space-y-1.5 text-gray-700 text-[11.5px]">
               <li>
-                Commit the file to your repo at <code>.github/workflows/deploy.yml</code> and push to <code>main</code> or <code>master</code>.
+                <strong>Save Workflow:</strong> Commit the file to your repo at <code>.github/workflows/deploy.yml</code> and push to <code>main</code> or <code>master</code>.
               </li>
               <li>
-                In your GitHub repo, navigate to <strong>Settings &rarr; Actions &rarr; General &rarr; Workflow permissions</strong> and select <strong>&ldquo;Read and write permissions&rdquo;</strong>, then Save.
+                <strong>Enable Write Permissions:</strong> In your GitHub repo, go to <strong>Settings &rarr; Actions &rarr; General &rarr; Workflow permissions</strong> and select <strong>&ldquo;Read and write permissions&rdquo;</strong>, then click <strong>Save</strong>.
               </li>
               <li>
-                After the workflow runs, go to <strong>Settings &rarr; Pages &rarr; Build and deployment</strong>, set Source to <strong>&ldquo;Deploy from a branch&rdquo;</strong>, select <code>gh-pages</code> branch and <code>/ (root)</code> folder.
+                <strong>Configure GitHub Pages:</strong> Once the action completes, go to <strong>Settings &rarr; Pages &rarr; Build and deployment</strong>, set Source to <strong>&ldquo;Deploy from a branch&rdquo;</strong>, select <code>gh-pages</code> branch and <code>/ (root)</code> folder, then Save.
               </li>
             </ol>
           </div>
