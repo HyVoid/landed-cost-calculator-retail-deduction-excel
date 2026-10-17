@@ -10,8 +10,8 @@
 
 > **Access the Landed Cost & Retail Margin Bridge Tools (No Signup or Installation)**
 >
-> - 🌐 **[Launch the Free Web-Based Landed Cost & Margin Bridge Simulator](./index.html)** — Test PO-to-shipment landed cost variance, FX impact decomposition, and retailer deduction classifications instantly in your browser (Free HTML Edition).
-> - 📥 **[Download the Full Landed Cost & Retailer Deduction Excel Workbook (.xlsx)](https://theseusworkshop.com/l/nakbxr)** — Get the 5-sheet dynamic array Microsoft Excel template for offline shipment reconciliation, remittance dispute tracking, and recurring SKU profitability audits *(Paid Commercial Edition — backed by a 30-day money-back guarantee)*.
+> - 🌐 **[Launch the Free Web-Based Landed Cost & Margin Bridge Simulator](https://hyvoid.github.io/landed-cost-calculator-retail-deduction-excel/)** — Test PO-to-shipment landed cost variance, FX impact decomposition, and retailer deduction classifications instantly in your browser (Free HTML Edition).
+> - 📥 **[Download the Full Landed Cost & Retailer Deduction Excel Workbook (.xlsx)](https://theseusworkshop.com/l/nakbxr?utm_source=github&utm_medium=GitHub%20README)** — Get the 5-sheet dynamic array Microsoft Excel template for offline shipment reconciliation, remittance dispute tracking, and recurring SKU profitability audits *(Paid Commercial Edition — backed by a 30-day money-back guarantee)*.
 >
 
 Designed specifically for **offshore sourcing and import distribution workflows**—spanning overseas factory POs, international ocean freight, Australian customs clearance (DAFF/ABF), local port drayage, and wholesale distribution into major retail chains (**Woolworths, Coles, ALDI, Kmart, and Big W**). Rather than replacing your ERP, general ledger, or customs broker, this Product Costing & Reconciliation Analyzer (PCRA) acts as an auditable decision-support layer answering one critical commercial question:
@@ -66,7 +66,7 @@ Open `05_Management_Summary` to turn financial variances into commercial actions
 - Review the **Dispute Recovery Queue**, assign an account manager or logistics owner, compile proof-of-delivery (POD) or buyer email evidence, and track claim status through resolution.
 
 > 🚢 **Ready to stop margin leakage across your import shipments and retail accounts?** 
-> After exploring the variance bridge in the **[Free Browser-Based Landed Cost & Margin Simulator](./index.html)**, get the **[Full PCRA Landed Cost & Deduction Recovery Excel Workbook (.xlsx)](https://theseusworkshop.com/l/nakbxr)** to process your own shipment batches offline, customize retailer deduction mappings, and maintain a repeatable monthly margin audit *(requires Microsoft 365 or Excel 2021+ for dynamic array formulas; backed by a 30-day money-back guarantee)*.
+> After exploring the variance bridge in the **[Free Browser-Based Landed Cost & Margin Simulator](https://hyvoid.github.io/landed-cost-calculator-retail-deduction-excel/)**, get the **[Full PCRA Landed Cost & Deduction Recovery Excel Workbook (.xlsx)](https://theseusworkshop.com/l/nakbxr?utm_source=github&utm_medium=GitHub%20README)** to process your own shipment batches offline, customize retailer deduction mappings, and maintain a repeatable monthly margin audit *(requires Microsoft 365 or Excel 2021+ for dynamic array formulas; backed by a 30-day money-back guarantee)*.
 
 ---
 
