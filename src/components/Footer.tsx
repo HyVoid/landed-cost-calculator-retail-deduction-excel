@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
         <div className="flex items-center gap-2 text-left">
           <HardDrive className="w-4 h-4 text-[#051C2C]" />
           <div>
-            <span className="font-semibold text-[#051C2C]">PCRA v2.6 M365 Edition</span>
+            <span className="font-semibold text-[#051C2C]">Theseus Workshop &bull; PCRA v2.6 M365 Edition</span>
             <span className="mx-2 text-[#E8E8E6]">|</span>
             <span>Zero Macro &bull; Dynamic JS Engine &bull; Zero Residual Guarantee</span>
           </div>

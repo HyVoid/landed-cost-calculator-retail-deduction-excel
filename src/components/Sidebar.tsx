@@ -93,22 +93,22 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <aside className="w-64 bg-[#FFFFFF] border-r border-[#E8E8E6] flex flex-col justify-between shrink-0 shadow-[1px_0_4px_rgba(5,28,44,0.04)] sticky top-0 h-screen z-30 select-none">
       {/* Top Branding Section */}
       <div>
-        <div className="h-[64px] px-5 border-b border-[#E8E8E6] flex items-center gap-3">
+        <div className="h-[68px] px-4 border-b border-[#E8E8E6] flex items-center gap-3">
           <div className="w-9 h-9 rounded-lg bg-[#051C2C] flex items-center justify-center text-white shadow-sm shrink-0">
             <FileSpreadsheet className="w-5 h-5 text-white" />
           </div>
           <div className="flex flex-col min-w-0">
-            <div className="flex items-center gap-1.5">
-              <span className="font-heading text-[17px] font-bold text-[#051C2C] tracking-tight leading-none">
+            <span className="font-heading text-[16px] font-bold text-[#051C2C] tracking-tight leading-tight truncate">
+              Theseus Workshop
+            </span>
+            <div className="flex items-center gap-1.5 mt-1">
+              <span className="text-[9px] font-bold tracking-wider px-1.5 py-0.5 rounded bg-[rgba(34,81,255,0.08)] text-[#2251FF] font-mono leading-none">
                 PCRA
               </span>
-              <span className="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-[rgba(5,28,44,0.06)] text-[#051C2C]">
-                SaaS
+              <span className="text-[10.5px] text-[#888888] tracking-tight leading-none truncate" title="Product Costing & Reconciliation Analyzer">
+                Product Costing &amp; Recon
               </span>
             </div>
-            <span className="text-[10px] text-[#888888] tracking-tight leading-none truncate mt-0.5" title="Cost & Reconciliation Analyzer">
-              Cost &amp; Recon Analyzer
-            </span>
           </div>
         </div>
 
