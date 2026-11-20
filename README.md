@@ -35,6 +35,14 @@ Instead of managing disconnected freight forwarder invoices, customs entry sheet
 | **Cryptic Retailer Remittance & Chargeback Codes** | Normalizes fragmented deduction codes across major grocers and department stores into standardized buckets (contractual rebates vs. disputable fines). | Normalized deduction category (Trading Terms, Co-op, DIFOT/OTIF Fines, Ullage/Damage), unmapped code alerts |
 | **Missed Retailer Claim & Chargeback Recoveries** | Flags high-value disputable deductions against configurable dollar thresholds, assigning dispute owners and required POD/delivery evidence checklists. | Recoverable deduction pool ($), dispute recovery status, high-priority SKU exception queue |
 
+## Spreadsheet Preview
+
+Want to take a closer look before downloading? You can preview the spreadsheet in Google Sheets to explore its layout, structure, and calculation logic.
+
+**[View Spreadsheet Preview on Google Sheets](https://docs.google.com/spreadsheets/d/1XL9CEI4T0byNKuWSc3rpNmAjhwKfB1sr/edit?usp=sharing&ouid=108770714531989318327&rtpof=true&sd=true)**
+
+> **Note on Compatibility:** The Google Sheets preview may display occasional `#NAME?` errors or formula warnings due to differences between Google Sheets and Microsoft Excel formula compatibility. These are preview-only compatibility issues and do not affect the functionality of the original Excel workbook. For the intended formula behavior and full functionality, please download and open the `.xlsx` file in Microsoft Excel.
+
 ---
 
 ## Step-by-Step Tutorial: How to Reconcile Import Landed Costs & Audit Retailer Deductions
