@@ -417,6 +417,23 @@ Finally, the margin bridge connects these operational findings to the decision m
 * **[shopify-pnl-reconciliation-excel](https://github.com/HyVoid/shopify-pnl-reconciliation-excel)** — Is each Shopify storefront actually profitable once true SKU-level costs, shared expenses, and bank charges are reconciled? — Reconcile multi-store Shopify sales exports against SKU-level COGS, allocated multi-currency OPEX, and bank statements to produce a trustworthy monthly P&L.
 * **[travel-agency-accounting-excel-template](https://github.com/HyVoid/travel-agency-accounting-excel-template)** — Which tour bookings actually generate net profit and positive cash flow after supplier costs and B2B collections? — Calculate per-booking tour job costs, gross margins, AR/AP settlement, and operating cash flow across multiple currencies.
 
+## Questions, Feedback & Product Updates
+
+This repository is part of the Theseus Workshop collection of lightweight, reusable business decision-support tools. Feedback is welcome on practical usage questions, workflow gaps, reproducible calculation problems, and improvement ideas.
+
+- **Questions and usage help:** [Open a discussion](https://github.com/HyVoid/business-decision-toolbox/discussions/categories/questions)
+- **Ideas and workflow suggestions:** [Share an idea](https://github.com/HyVoid/business-decision-toolbox/discussions/categories/ideas)
+- **Product updates:** [Follow product updates](https://github.com/HyVoid/business-decision-toolbox/discussions/categories/product-updates)
+- **Technical bugs:** Use the **Report a bug** issue form in this repository. Include the tool / workbook version, affected workflow area, expected vs. actual result, and reproducible steps.
+
+## Privacy & Data Handling Notice
+
+Please use synthetic or adequately de-identified examples when reporting issues. Do not publish raw workbooks, source exports, credentials, personal information, or confidential commercial records in public GitHub issues or discussions.
+
+Do not publish retailer remittance files, supplier / customer contracts, customs documents, shipment records, proof-of-delivery documents, actual deduction codes tied to counterparties, or SKU margins. Use synthetic values and invented codes.
+
+For browser-based tools, do not infer data storage, transmission, or retention behavior from the user interface alone. Check the current implementation and applicable data-handling notes before testing with real business data. When uncertain, use synthetic data only.
+
 ## License
 
 This project is licensed under the **Apache License 2.0**. See the [Apache License 2.0 text](https://www.apache.org/licenses/LICENSE-2.0) for the license terms.
